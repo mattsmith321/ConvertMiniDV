@@ -1,0 +1,7 @@
+SetFilterMTMode("QTGMC", 2)
+FFmpegSource2("Input.avi", atrack=1)
+ConvertToYV12()
+AssumeBFF()
+QTGMC(Preset="Slower", Edithreads=1, Sharpness=3.0, EZDenoise=3.0, NoisePreset="Fast")
+BilinearResize(720,540)
+PreFetch(threads=4)
